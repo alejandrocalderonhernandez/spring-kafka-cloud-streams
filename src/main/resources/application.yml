@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    function:
+      definition: producer;squadNum;consumer
+    stream:
+      bindings:
+        producer-out-0:
+          destination: numbers
+        squadNum-in-0:
+          destination: numbers
+        squadNum-out-0:
+          destination: squares
+        consumer-in-0:
+          destination: squares
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+
